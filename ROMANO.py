@@ -4,7 +4,7 @@
 def romano_or_numeral():
     num=0
     while (num!=1) and (num!=2):
-        num=int(input('Escolha a opção: \n \n 1- ROMANO PARA NÚMERO \n 2- NUMÉRICO PARA ROMANO \n \n Ditige 1 ou 2: ' ))
+        num=int(input('Escolha a opção: \n \n 1- ROMANO PARA DECIMAL \n 2- DECIMAL PARA ROMANO \n \n Ditige 1 ou 2: ' ))
         print('')
 
         #mensagem de escolha inválida
@@ -20,8 +20,6 @@ def romano_or_numeral():
     else:
         geral_numeral()
 
-
-
 # FUNÇÃO GERAL DE CONVERÇÃO NUMERAL_ROMANO
 def geral_numeral():
     
@@ -32,20 +30,20 @@ def geral_numeral():
     print('')
     print(f'O número {num} em númerico é {convercao}')
 
-
-
-
 # FUNÇÃO GERAL DE CONVERÇÃO ROMANO_NUMERAL
 def geral_romano():
+    
     #chamando funcão que recebe e prepara os números romanos para a converção 
     lista, romano = prepara_romano()
+
+    #função converte de romano para decimal
     lista= converte_romano(lista)
+
+    #soma os valores da lista
     convercao= soma_lista(lista,1)
+
     print('')
     print(f'O número romano {romano} em númerico é {convercao}')
-
-
-
 
 #RECEBENDO E PREPARANDO NUMERO ROMANO
 def prepara_romano():
@@ -64,9 +62,6 @@ def prepara_romano():
             prepara_romano()
         lista.append(i)
     return lista, y
-
-
-
 
 #CONVERTENDO NUMERO ROMANO
 def converte_romano(lista):
@@ -130,9 +125,6 @@ def converte_romano(lista):
                         convercao.append(1000)
     return convercao
 
-
-
-
 #SOMANDO OS NUMEROS DA LISTA 
 def soma_lista(lista,x):
     if x==1:
@@ -145,10 +137,6 @@ def soma_lista(lista,x):
         for i in lista:
             soma=soma+i
         return soma
-
-
-
-
 
 #RECEBENDO O NÚMERO
 def prepara_numerico():
@@ -164,8 +152,6 @@ def prepara_numerico():
             print('')
     print('')
     return y
-
-
 
 #CONVERTE NUMERO PARA ROMANO
 def converte_numerico(num):
@@ -225,13 +211,6 @@ def converte_numerico(num):
         
     return lista_numero   
 
-
-
-
-
-
 #http://www.climaat.angra.uac.pt/produtos/calculadoras/numeros_romanos.htm
-
-
 
 romano_or_numeral()
